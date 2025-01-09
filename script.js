@@ -39,7 +39,7 @@ async function getDatafromIP() {
     ipaddress_ui.innerText = value.ip
     location_ui.innerText = value.location.city + value.location.postalCode
     timezone_ui.innerText = "GMT " + value.location.timezone
-    ISP_ui.innerText = value.isp
+    ISP_ui.innerText = (value.isp).substring(0,20)
     map.setView([value.location.lat,  value.location.lng], 18);
     L.marker([value.location.lat,value.location.lng], {icon: anchor}).addTo(map);
     console.log(value)
